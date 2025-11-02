@@ -1,0 +1,78 @@
+/*applies to all flex items, aka direct chidren of body*/
+body{
+    /*allows the tools that follow to work on the body's direct children*/
+    display: flex;
+    /*centers items horizontally*/
+    justify-content: center;
+    /*centers items vertically*/
+    align-items: center;
+}
+
+/*makes the buttons fit within the calculator div tag,
+buttons would cover the whole screen otherwise*/
+#calculator{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1C1C1C;
+    /*sets the default width of the entire calculator*/
+    width: 400px;
+    /*allows shrinking if broswer is narrower than 400px, but sets
+    limit  of 400px even if the browser screen is larger than usual*/
+    max-width: 400px;
+    /*order of specifications applies to top, right, bottom, left
+    padding adds a few pixels to the specified areas*/
+    padding: 60px 5px 0px 5px
+}
+
+#display{
+    background-color: #1C1C1C;
+    color: white;
+    text-align: right;
+    font-size: 90px;
+    border: none;
+    outline: none;
+    /*makes the width 100% of its parent container which in this case is "calculator",
+    you can see how this was set up within the index file*/
+    width: 100%;
+    /*gets rid of extra padding that makes the display box stick out further than the calculator*/
+    box-sizing: border-box;
+}
+
+/*referencing the div "buttons" we made in index*/
+#buttons{
+    display: grid;
+    /*makes a grid with 4 columns and 1 fraction of available space within each comlumn*/
+    grid-template-columns: repeat(4, 1fr);
+    /*space between the grid cells*/
+    gap: 8px;
+    /*usable space within the column for info to be stored*/
+    padding: 8px;
+}
+
+/*Styling each button within the button div tag*/
+#buttons button{
+    background-color: #505050;
+    /*font color*/
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    /*round out the edges of each button*/
+    border-radius: 40px;
+    /*makes the buttons have no outline*/
+    border: none;
+
+}
+
+/*changes the look of the button when the mouse is hovered over it
+if I only did the function to buttons and not #buttons button, the entire
+set of buttons would change opacity as one unit, regardless of what button the
+mouse is hoevred over*/
+#buttons button:hover{
+    opacity: 70%;
+}
+
+/*changes the look of the button when it is clicked*/
+#buttons button:active{
+    opacity: 90%;
+}
